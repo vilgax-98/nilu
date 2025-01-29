@@ -28,7 +28,7 @@
         <textarea id="messageBox" placeholder="Start your message with yes or no...." rows="5"></textarea>
 
         <!-- Submit Button -->
-        <button id="submitButton" onclick="sendEmail()">Submit</button>
+        <button id="submitButton">Submit</button>
 
         <!-- Response Message -->
         <p id="responseMessage" style="display: none; margin-top: 20px; font-size: 1.2rem;"></p>
@@ -37,40 +37,53 @@
     <!-- Reuse the same JavaScript for background slideshow -->
     <script src="script.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your User ID
+        emailjs.init('poF4v2hOCmXAxm0Pz');
+    </script>
+
     <!-- Add new JavaScript for the submit button functionality -->
     <script>
         const submitButton = document.getElementById('submitButton');
         const messageBox = document.getElementById('messageBox');
         const responseMessage = document.getElementById('responseMessage');
 
-        function sendEmail() {
-            const textareaValue = document.getElementById('messageBox').value;
-            const email = "azahar.workplace@gmail.com"; // Replace with your email
-            const subject = "Message from your form";
-            const body = encodeURIComponent(textareaValue);
+        submitButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent form submission
 
-            // Open the user's email client with pre-filled data
-            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-        }
-
-        submitButton.addEventListener('click', () => {
-            const message = messageBox.value.trim().toLowerCase(); // Convert to lowercase for case-insensitive check
+            const message = messageBox.value.trim().toLowerCase();
 
             if (message.includes('yes')) {
-                // Allow form submission
-                responseMessage.textContent = "I love you too 💖";
-                responseMessage.style.color = '#4CAF50'; // Green for success
-                responseMessage.style.display = 'block';
+                // Send email using EmailJS
+                emailjs.send('service_2t3p3zn', 'template_wqinook', {
+                    message: messageBox.value.trim(), // Pass the user's message
+                })
+                    .then(() => {
+                        // Success message
+                        responseMessage.textContent = "I LOVE YOU TOOOOO❤️";
+                        responseMessage.style.color = '#4CAF50'; // Green for success
+                        responseMessage.style.display = 'block';
 
-                // Here you can add code to submit the form or perform other actions
+                        // Clear the text box
+                        messageBox.value = '';
+
+                        // Trigger confetti
+                        confetti({
+                            particleCount: 100,
+                            spread: 70,
+                            origin: { y: 0.6 },
+                        });
+                    });
+                
             } else if (message.includes('no')) {
-                // Prevent form submission and show a warning
-                responseMessage.textContent = "Sorry, 'no' is not an option😒. Type 'yes' to submit.";
+                // Show warning if the user types "no"
+                responseMessage.textContent = "No is not an option😒. Type again.";
                 responseMessage.style.color = '#ff3b2f'; // Red for error
                 responseMessage.style.display = 'block';
             } else {
-                // Show a generic message if the input is neither "yes" nor "no"
-                responseMessage.textContent = 'Start your message with "yes" or "no".';
+                // Show generic message if the input is invalid
+                responseMessage.textContent = 'Please type "yes" to submit the form.';
                 responseMessage.style.color = '#ff3b2f'; // Red for error
                 responseMessage.style.display = 'block';
             }

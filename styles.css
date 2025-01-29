@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Garamond', serif;
     color: #fff;
     /* White text for better contrast */
     overflow: hidden;
@@ -62,7 +62,10 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+
+
 }
+
 
 h1 {
     font-size: 2.5rem;
@@ -125,4 +128,85 @@ button:hover {
     height: 100%;
     pointer-events: none;
     z-index: 2;
+}
+
+/* Text Box */
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ff6f61;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    resize: none;
+    /* Prevent resizing */
+    background: rgba(255, 255, 255, 0.8);
+    /* Semi-transparent white */
+    color: #333;
+}
+
+textarea::placeholder {
+    color: #888;
+}
+
+/* Submit Button */
+#submitButton {
+    background: #ff6f61;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#submitButton:hover {
+    background: #ff3b2f;
+    transform: scale(1.1);
+}
+
+/* Response Message */
+#responseMessage {
+    color: #ff6f61;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .forgive-me-button-container button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Forgive Me Button Container */
+.forgive-me-button-container {
+    position: fixed;
+    /* Fix the button to the bottom of the screen */
+    bottom: 20px;
+    /* Distance from the bottom */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Adjust for exact centering */
+    text-align: center;
+    z-index: 10;
+    /* Ensure it's above other elements */
+}
+
+/* Forgive Me Button */
+.forgive-me-button-container button {
+    background: #ff6f61;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.forgive-me-button-container button:hover {
+    background: #ff3b2f;
+    transform: scale(1.1);
 }

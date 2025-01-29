@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgive Me 💖</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Reuse the same CSS file -->
+</head>
+
+<body>
+    <div class="background-slideshow">
+        <!-- Reuse the same background slideshow images -->
+        <img src="images/nilu-eyes.jpg" alt="Photo 1" class="background-image active">
+        <img src="images/nilu-eyes1.jpg" alt="Photo 2" class="background-image">
+        <img src="images/nilu-eye3.jpeg" alt="Photo 3" class="background-image">
+        <img src="images/nilu-lips.jpeg" alt="Photo 4" class="background-image">
+        <img src="images/nilu-sleeping.jpeg" alt="Photo 5" class="background-image">
+        <img src="images/nilu-hand.jpeg" alt="Photo 6" class="background-image">
+        <img src="images/nilu-stare.jpeg" alt="Photo 7" class="background-image">
+        <img src="images/nilu-stare2.jpeg" alt="Photo 8" class="background-image">
+    </div>
+    <div class="container">
+        <h1>Forgive Me!</h1>
+        <p>Yes? No?</p>
+
+        <!-- Text Box -->
+        <textarea id="messageBox" placeholder="Start your message with yes or no...." rows="5"></textarea>
+
+        <!-- Submit Button -->
+        <button id="submitButton" onclick="sendEmail()">Submit</button>
+
+        <!-- Response Message -->
+        <p id="responseMessage" style="display: none; margin-top: 20px; font-size: 1.2rem;"></p>
+    </div>
+
+    <!-- Reuse the same JavaScript for background slideshow -->
+    <script src="script.js"></script>
+
+    <!-- Add new JavaScript for the submit button functionality -->
+    <script>
+        const submitButton = document.getElementById('submitButton');
+        const messageBox = document.getElementById('messageBox');
+        const responseMessage = document.getElementById('responseMessage');
+
+        function sendEmail() {
+            const textareaValue = document.getElementById('messageBox').value;
+            const email = "azahar.workplace@gmail.com"; // Replace with your email
+            const subject = "Message from your form";
+            const body = encodeURIComponent(textareaValue);
+
+            // Open the user's email client with pre-filled data
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
+
+        submitButton.addEventListener('click', () => {
+            const message = messageBox.value.trim().toLowerCase(); // Convert to lowercase for case-insensitive check
+
+            if (message.includes('yes')) {
+                // Allow form submission
+                responseMessage.textContent = "Thank you for forgiving me! 💖";
+                responseMessage.style.color = '#4CAF50'; // Green for success
+                responseMessage.style.display = 'block';
+
+                // Here you can add code to submit the form or perform other actions
+            } else if (message.includes('no')) {
+                // Prevent form submission and show a warning
+                responseMessage.textContent = "Sorry, 'no' is not an option😒. Type 'yes' to submit.";
+                responseMessage.style.color = '#ff3b2f'; // Red for error
+                responseMessage.style.display = 'block';
+            } else {
+                // Show a generic message if the input is neither "yes" nor "no"
+                responseMessage.textContent = 'Start your message with "yes" or "no".';
+                responseMessage.style.color = '#ff3b2f'; // Red for error
+                responseMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

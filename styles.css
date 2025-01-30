@@ -210,3 +210,68 @@ textarea::placeholder {
     background: #ff3b2f;
     transform: scale(1.1);
 }
+
+/* Look Here Button */
+#lookHereButton {
+    background: #6f61ff;
+    /* Vibrant color */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#lookHereButton:hover {
+    background: #4b3dff;
+    /* Darker shade on hover */
+    transform: scale(1.1);
+}
+
+/* Target Section */
+#targetSection {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(20px);
+    /* Slightly offset */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#targetSection.visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#lookHereButton {
+    animation: pulse 2s infinite;
+}
+
+#targetSection.visible {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}

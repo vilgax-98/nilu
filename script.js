@@ -52,3 +52,16 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
+
+// Select elements
+const lookHereButton = document.getElementById('lookHereButton');
+const targetSection = document.getElementById('targetSection');
+
+// Add click event to the button
+lookHereButton.addEventListener('click', () => {
+  // Scroll to the target section smoothly
+  targetSection.scrollIntoView({ behavior: 'smooth' });
+
+  // Add a class to make the section visible with animation
+  targetSection.classList.add('visible');
+});

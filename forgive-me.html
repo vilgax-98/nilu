@@ -30,65 +30,77 @@
         <!-- Submit Button -->
         <button id="submitButton">Submit</button>
 
-        <!-- Response Message -->
-        <p id="responseMessage" style="display: none; margin-top: 20px; font-size: 1.2rem;"></p>
-    </div>
+        <!-- Look Here Button -->
+        <a href="look-here.html" style="text-decoration: none;">
+            <button id="lookHereButton">Look Here 👀</button>
+        </a>
 
-    <!-- Reuse the same JavaScript for background slideshow -->
-    <script src="script.js"></script>
+        <!-- Target Section -->
+        <div id="targetSection"
+            style="margin-top: 40px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+            <p>This is the special section you should look at! 💖</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        // Initialize EmailJS with your User ID
-        emailjs.init('poF4v2hOCmXAxm0Pz');
-    </script>
+            <!-- Response Message -->
+            <p id="responseMessage" style="display: none; margin-top: 20px; font-size: 1.2rem;"></p>
+            <a href="index.html" style="text-decoration: none;">
+                <button id="backButton">Back to Home</button>
+            </a>
+        </div>
 
-    <!-- Add new JavaScript for the submit button functionality -->
-    <script>
-        const submitButton = document.getElementById('submitButton');
-        const messageBox = document.getElementById('messageBox');
-        const responseMessage = document.getElementById('responseMessage');
+        <!-- Reuse the same JavaScript for background slideshow -->
+        <script src="script.js"></script>
 
-        submitButton.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent form submission
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script>
+            // Initialize EmailJS with your User ID
+            emailjs.init('poF4v2hOCmXAxm0Pz');
+        </script>
 
-            const message = messageBox.value.trim().toLowerCase();
+        <!-- Add new JavaScript for the submit button functionality -->
+        <script>
+            const submitButton = document.getElementById('submitButton');
+            const messageBox = document.getElementById('messageBox');
+            const responseMessage = document.getElementById('responseMessage');
 
-            if (message.includes('yes')) {
-                // Send email using EmailJS
-                emailjs.send('service_2t3p3zn', 'template_wqinook', {
-                    message: messageBox.value.trim(), // Pass the user's message
-                })
-                    .then(() => {
-                        // Success message
-                        responseMessage.textContent = "I LOVE YOU TOOOOO❤️";
-                        responseMessage.style.color = '#4CAF50'; // Green for success
-                        responseMessage.style.display = 'block';
+            submitButton.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent form submission
 
-                        // Clear the text box
-                        messageBox.value = '';
+                const message = messageBox.value.trim().toLowerCase();
 
-                        // Trigger confetti
-                        confetti({
-                            particleCount: 100,
-                            spread: 70,
-                            origin: { y: 0.6 },
+                if (message.includes('yes')) {
+                    // Send email using EmailJS
+                    emailjs.send('service_2t3p3zn', 'template_wqinook', {
+                        message: messageBox.value.trim(), // Pass the user's message
+                    })
+                        .then(() => {
+                            // Success message
+                            responseMessage.textContent = "Thank you for forgiving me! 💖 I'll receive your message soon.";
+                            responseMessage.style.color = '#4CAF50'; // Green for success
+                            responseMessage.style.display = 'block';
+
+                            // Clear the text box
+                            messageBox.value = '';
+
+                            // Trigger confetti
+                            confetti({
+                                particleCount: 100,
+                                spread: 70,
+                                origin: { y: 0.6 },
+                            });
                         });
-                    });
-                
-            } else if (message.includes('no')) {
-                // Show warning if the user types "no"
-                responseMessage.textContent = "No is not an option😒. Type again.";
-                responseMessage.style.color = '#ff3b2f'; // Red for error
-                responseMessage.style.display = 'block';
-            } else {
-                // Show generic message if the input is invalid
-                responseMessage.textContent = 'Please type "yes" to submit the form.';
-                responseMessage.style.color = '#ff3b2f'; // Red for error
-                responseMessage.style.display = 'block';
-            }
-        });
-    </script>
+                } else if (message.includes('no')) {
+                    // Show warning if the user types "no"
+                    responseMessage.textContent = "You said no. Please reconsider! 😢";
+                    responseMessage.style.color = '#ff3b2f'; // Red for error
+                    responseMessage.style.display = 'block';
+                } else {
+                    // Show generic message if the input is invalid
+                    responseMessage.textContent = 'Please type "yes" to submit the form.';
+                    responseMessage.style.color = '#ff3b2f'; // Red for error
+                    responseMessage.style.display = 'block';
+                }
+            });
+        </script>
 </body>
 
 </html>

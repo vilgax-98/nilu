@@ -1,107 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgive Me 💖</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Reuse the same CSS file -->
+    <meta http-equiv="refresh" content="0;url=index.html">
+    <title>Redirecting...</title>
 </head>
-
 <body>
-    <div class="background-slideshow">
-        <!-- Reuse the same background slideshow images -->
-        <img src="images/nilu-eyes.jpg" alt="Photo 1" class="background-image active">
-        <img src="images/nilu-eyes1.jpg" alt="Photo 2" class="background-image">
-        <img src="images/nilu-eye3.jpeg" alt="Photo 3" class="background-image">
-        <img src="images/nilu-lips.jpeg" alt="Photo 4" class="background-image">
-        <img src="images/nilu-sleeping.jpeg" alt="Photo 5" class="background-image">
-        <img src="images/nilu-hand.jpeg" alt="Photo 6" class="background-image">
-        <img src="images/nilu-stare.jpeg" alt="Photo 7" class="background-image">
-        <img src="images/nilu-stare2.jpeg" alt="Photo 8" class="background-image">
-    </div>
-    <div class="container">
-        <h1>Forgive Me!</h1>
-        <p>Yes? No?</p>
-
-        <!-- Text Box --!>
-        <textarea id="messageBox" placeholder="Start your message with yes or no...." rows="5"></textarea>
-
-        <!-- Submit Button --!>
-        <button id="submitButton">Submit</button>
-
-        <!-- Look Here Button -->
-        <a href="look-here.html" style="text-decoration: none;">
-            <button id="lookHereButton">Look Here 👀</button>
-        </a>
-
-        <!-- Target Section -->
-        <div id="targetSection"
-            style="margin-top: 40px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
-            <p>This is the special section you should look at! 💖</p>
-
-            <!-- Response Message -->
-            <p id="responseMessage" style="display: none; margin-top: 20px; font-size: 1.2rem;"></p>
-            <a href="index.html" style="text-decoration: none;">
-                <button id="backButton">Back to Home</button>
-            </a>
-        </div>
-
-        <!-- Reuse the same JavaScript for background slideshow -->
-        <script src="script.js"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script>
-            // Initialize EmailJS with your User ID
-            emailjs.init('poF4v2hOCmXAxm0Pz');
-        </script>
-
-        <!-- Add new JavaScript for the submit button functionality -->
-        <script>
-            const submitButton = document.getElementById('submitButton');
-            const messageBox = document.getElementById('messageBox');
-            const responseMessage = document.getElementById('responseMessage');
-
-            submitButton.addEventListener('click', (event) => {
-                event.preventDefault(); // Prevent form submission
-
-                const message = messageBox.value.trim().toLowerCase();
-
-                if (message.includes('yes')) {
-                    // Send email using EmailJS
-                    emailjs.send('service_2t3p3zn', 'template_wqinook', {
-                        message: messageBox.value.trim(), // Pass the user's message
-                    })
-                        .then(() => {
-                            // Success message
-                            responseMessage.textContent = "Thank you for forgiving me! 💖 I'll receive your message soon.";
-                            responseMessage.style.color = '#4CAF50'; // Green for success
-                            responseMessage.style.display = 'block';
-
-                            // Clear the text box
-                            messageBox.value = '';
-
-                            // Trigger confetti
-                            confetti({
-                                particleCount: 100,
-                                spread: 70,
-                                origin: { y: 0.6 },
-                            });
-                        });
-                } else if (message.includes('no')) {
-                    // Show warning if the user types "no"
-                    responseMessage.textContent = "You said no. Please reconsider! 😢";
-                    responseMessage.style.color = '#ff3b2f'; // Red for error
-                    responseMessage.style.display = 'block';
-                } else {
-                    // Show generic message if the input is invalid
-                    responseMessage.textContent = 'Please type "yes" to submit the form.';
-                    responseMessage.style.color = '#ff3b2f'; // Red for error
-                    responseMessage.style.display = 'block';
-                }
-            });
-        </script>
+    <p>Redirecting to <a href="index.html">the main page</a>...</p>
 </body>
-
 </html>
 

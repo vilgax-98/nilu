@@ -1,44 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Sorry 💖</title>
+    <title>For Nilu</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Nastaliq+Urdu:wght@400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div class="background-slideshow">
-        <img src="images/nilu-eyes.jpg" alt="Photo 1" class="background-image active">
-        <img src="images/nilu-eyes1.jpg" alt="Photo 2" class="background-image">
-        <img src="images/nilu-eye3.jpeg" alt="Photo 3" class="background-image">
-        <img src="images/nilu-lips.jpeg" alt="Photo 4" class="background-image">
-        <img src="images/nilu-sleeping.jpeg" alt="Photo 4" class="background-image">
-        <img src="images/nilu-hand.jpeg" alt="Photo 4" class="background-image">
-        <img src="images/nilu-stare.jpeg" alt="Photo 4" class="background-image">
-        <img src="images/nilu-stare2.jpeg" alt="Photo 4" class="background-image">
-    </div>
-    <div class="container">
-        <h1>I'm Sorry, Nilu 💖</h1>
-        <p>تیری صورت سے ہے عالم میں بہاروں کو ثبات <br>تیری آنکھوں کے سوا دنیا میں رکھا کیا ہے
-        </p>
-        <p>Yaar maaf bhi kardo ab. KAAN PAKAD KE SORRY.</p>
-        <button id="heartButton">Touch My Heart</button>
-        <div id="heartContainer"></div>
-    </div>
+    <!-- Opening -->
+    <section class="hero" id="hero">
+        <div class="hero-image">
+            <img src="images/nilu-eyes.jpg" alt="Nilu">
+        </div>
+        <div class="hero-content">
+            <p class="hero-subtitle">for you, always</p>
+            <h1 class="hero-title">Happy Birthday, Nilu</h1>
+        </div>
+        <div class="scroll-hint">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
 
-    <!-- Inside the body of index.html -->
-    <div class="forgive-me-button-container">
-        <a href="forgive-me.html" style="text-decoration: none;">
-            <button>Forgive Me?</button>
-        </a>
-    </div>
-    <canvas id="confettiCanvas"></canvas>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Poetry Section 1 -->
+    <section class="poetry-section">
+        <div class="poetry-content">
+            <p class="poetry urdu" dir="rtl" lang="ur">
+                تیری صورت سے ہے عالم میں بہاروں کو ثبات<br>
+                تیری آنکھوں کے سوا دنیا میں رکھا کیا ہے
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/nilu-eyes1.jpg" alt="Nilu" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="images/nilu-lips.jpeg" alt="Nilu" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="images/nilu-hand.jpeg" alt="Nilu" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="images/nilu-stare.jpeg" alt="Nilu" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Poetry Section 2 -->
+    <section class="poetry-section poetry-section--alt">
+        <div class="poetry-content">
+            <p class="poetry urdu" dir="rtl" lang="ur">
+                تو بھی ایسا ہی دل آرام شجر ہے جس نے<br>
+                مجھ کو اس دشت قیامت سے بچائے رکھا<br>
+                ایک آشفتہ سر و آبلہ پا کی خاطر<br>
+                کبھی زلفوں کبھی پلکوں کو بچھائے رکھا
+            </p>
+        </div>
+    </section>
+
+    <!-- More Gallery -->
+    <section class="gallery gallery--sparse">
+        <div class="gallery-single">
+            <img src="images/nilu-sleeping.jpeg" alt="Nilu" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Message -->
+    <section class="message-section" id="message">
+        <div class="message-content">
+            <p class="message-text">
+                In the most selfish way possible,<br>
+                I hope nobody admires you the way I do.
+            </p>
+        </div>
+    </section>
+
+    <!-- Final -->
+    <section class="final-section" id="final">
+        <div class="final-image">
+            <img src="images/nilu-stare2.jpeg" alt="Nilu">
+        </div>
+        <div class="final-content">
+            <p class="final-text">I love you.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>yours, forever</p>
+    </footer>
+
     <script src="script.js"></script>
-
 </body>
-
 </html>
 

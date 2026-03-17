@@ -10,92 +10,214 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Nastaliq+Urdu:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="loader" id="loader">
+        <button id="startBtn" class="golden-btn">Start</button>
+    </div>
+
+    <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+    <div class="main-content" id="mainContent">
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb--1"></span>
+        <span class="orb orb--2"></span>
+        <span class="orb orb--3"></span>
+    </div>
+    <div class="confetti" aria-hidden="true"></div>
     <!-- Opening -->
     <section class="hero" id="hero">
         <div class="hero-image">
-            <img src="images/nilu-eyes.jpg" alt="Nilu">
+            <img src="images/cake.jpg" alt="Cake">
         </div>
         <div class="hero-content">
             <p class="hero-subtitle">for you, always</p>
             <h1 class="hero-title">Happy Birthday, Nilu</h1>
+            <div class="landing-name">Nilu</div>
+            <div class="type-wrap">
+                <span id="typedText"></span><span class="typed-cursor">|</span>
+            </div>
+            <button class="celebrate-btn" id="enterSiteBtn">Explore the Memories</button>
         </div>
+
         <div class="scroll-hint">
             <span>scroll</span>
             <div class="scroll-line"></div>
         </div>
     </section>
-
-    <!-- Poetry Section 1 -->
-    <section class="poetry-section">
-        <div class="poetry-content">
-            <p class="poetry urdu" dir="rtl" lang="ur">
-                تیری صورت سے ہے عالم میں بہاروں کو ثبات<br>
-                تیری آنکھوں کے سوا دنیا میں رکھا کیا ہے
-            </p>
-        </div>
-    </section>
-
-    <!-- Gallery -->
-    <section class="gallery" id="gallery">
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="images/nilu-eyes1.jpg" alt="Nilu" loading="lazy">
+    <main class="site-content" id="siteContent" hidden>
+        <!-- Poetry Section 1 -->
+        <section class="poetry-section">
+            <div class="poetry-content">
+                <p class="poetry urdu" dir="rtl" lang="ur">
+                    تیری صورت سے ہے عالم میں بہاروں کو ثبات<br>
+                    تیری آنکھوں کے سوا دنیا میں رکھا کیا ہے
+                </p>
             </div>
-            <div class="gallery-item">
-                <img src="images/nilu-lips.jpeg" alt="Nilu" loading="lazy">
+        </section>
+
+        <!-- Gallery -->
+        <section class="gallery" id="gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/nilu-eyes1.jpg" alt="Nilu" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/nilu-lips.jpeg" alt="Nilu" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/nilu-hand.jpeg" alt="Nilu" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/nilu-stare.jpeg" alt="Nilu" loading="lazy">
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="images/nilu-hand.jpeg" alt="Nilu" loading="lazy">
+        </section>
+
+        <!-- Poetry Section 2 -->
+        <section class="poetry-section poetry-section--alt">
+            <div class="poetry-content">
+                <p class="poetry urdu" dir="rtl" lang="ur">
+                    تو بھی ایسا ہی دل آرام شجر ہے جس نے<br>
+                    مجھ کو اس دشت قیامت سے بچائے رکھا<br>
+                    ایک آشفتہ سر و آبلہ پا کی خاطر<br>
+                    کبھی زلفوں کبھی پلکوں کو بچھائے رکھا
+                </p>
             </div>
-            <div class="gallery-item">
-                <img src="images/nilu-stare.jpeg" alt="Nilu" loading="lazy">
+        </section>
+
+        <!-- More Gallery -->
+        <section class="gallery gallery--sparse">
+            <div class="gallery-single">
+                <img src="images/nilu-sleeping.jpeg" alt="Nilu" loading="lazy">
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Poetry Section 2 -->
-    <section class="poetry-section poetry-section--alt">
-        <div class="poetry-content">
-            <p class="poetry urdu" dir="rtl" lang="ur">
-                تو بھی ایسا ہی دل آرام شجر ہے جس نے<br>
-                مجھ کو اس دشت قیامت سے بچائے رکھا<br>
-                ایک آشفتہ سر و آبلہ پا کی خاطر<br>
-                کبھی زلفوں کبھی پلکوں کو بچھائے رکھا
-            </p>
-        </div>
-    </section>
+        <!-- Photo Album Group 1 -->
+        <section class="gallery gallery--album" id="album-1">
+            <div class="album-header">
+                <p class="album-kicker">photo album</p>
+                <h2 class="album-title">Your Little Moments</h2>
+            </div>
+            <div class="album-grid">
+                <img src="images/nilu-eye3.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2024-11-24_b~EiQSFU9uTGE2WmNNd1B2VU1lRVl2bVdKVhoAGgAyAQ9IAlAEYAE.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2024-11-25_b~EiQSFWY4cDRESWQyNkU1amJDYlRiYVhuZRoAGgAyAQ9IAlAEYAE.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2024-11-27_b~EiQSFXFhdERUVmNydU9OUHJYdjMxeWNUMBoAGgAyAQ9IAlAEYAE.jpeg" alt="Nilu" loading="lazy">
+            </div>
+        </section>
 
-    <!-- More Gallery -->
-    <section class="gallery gallery--sparse">
-        <div class="gallery-single">
-            <img src="images/nilu-sleeping.jpeg" alt="Nilu" loading="lazy">
-        </div>
-    </section>
+        <!-- Poetry Section 3 -->
+        <section class="poetry-section">
+            <div class="poetry-content">
+                <p class="poetry urdu" dir="rtl" lang="ur">
+                    تمہاری یادوں میں رات بھر جاگتے ہیں<br>
+                    تمہاری خیال میں دن بھر سوچتے ہیں
+                </p>
+            </div>
+        </section>
 
-    <!-- Message -->
-    <section class="message-section" id="message">
-        <div class="message-content">
-            <p class="message-text">
-                In the most selfish way possible,<br>
-                I hope nobody admires you the way I do.
-            </p>
-        </div>
-    </section>
+        <!-- Photo Album Group 2 -->
+        <section class="gallery gallery--album" id="album-2">
+            <div class="album-grid">
+                <img src="images/2024-12-02_b~EiQSFU1SZEFxczNuVVA5Wk43YUJUNVl3axoAGgAyAQ9IAlAEYAE.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2024-12-23_b~EikSGmNyVUlBWlNWM0h1Y2dXWkVQU3RnQi4xMDIwGgAaADIBBEgBUB5gAQ.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2024-12-23_b~EiQSFVJCME56SGVybzNVczJrM2hIYndyRhoAGgAyAXRIAlAEYAE.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2025-01-13_b~EiUSGlhnTVdDTFozRFNGYlFXcjRYMWF4dS4xMDIwMgEESAFQHmAB.jpeg" alt="Nilu" loading="lazy">
+            </div>
+        </section>
 
-    <!-- Final -->
-    <section class="final-section" id="final">
-        <div class="final-image">
-            <img src="images/nilu-stare2.jpeg" alt="Nilu">
-        </div>
-        <div class="final-content">
-            <p class="final-text">I love you.</p>
-        </div>
-    </section>
+        <!-- Poetry Section 4 -->
+        <section class="poetry-section poetry-section--alt">
+            <div class="poetry-content">
+                <p class="poetry urdu" dir="rtl" lang="ur">
+                    تمہاری ہنسی میں جنت کی خوشبو ہے<br>
+                    تمہاری بات میں دنیا کا رنگ ہے
+                </p>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>yours, forever</p>
-    </footer>
+        <!-- Photo Album Group 3 -->
+        <section class="gallery gallery--album" id="album-3">
+            <div class="album-grid">
+                <img src="images/2025-01-15_b~ChxqMWZ1a0NCRVZjYzNDenp4RE1tekkuMTAyMF8xEiUSGmoxZnVrQ0JFVmNjM0N6enhETW16SS4xMDIwMgEESAFQHmAB.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2025-01-15_b~EiASFVhCbzdKYWtWbUpqS0FFZXB4Vk9IcjIBdEgCUARgAQ.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2025-01-15_thumbnail~zip-DF5019AC-29EF-4270-BF3A-2CF3EAD6B755.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2025-01-31_thumbnail~zip-57F7FD97-F132-4249-A790-5E64D836F5C0.jpeg" alt="Nilu" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Poetry Section 5 -->
+        <section class="poetry-section">
+            <div class="poetry-content">
+                <p class="poetry urdu" dir="rtl" lang="ur">
+                    ہر لمحہ تمہارے ساتھ ایک خواب ہے<br>
+                    ہر سانس میں تمہاری یاد بسی ہے
+                </p>
+            </div>
+        </section>
+
+        <!-- Photo Album Group 4 -->
+        <section class="gallery gallery--album" id="album-4">
+            <div class="album-grid">
+                <img src="images/2025-02-02_b~EiASFWpnZEE5dFVVVEFYMW1yTVhQTjZPczIBdEgCUARgAQ.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2025-02-03_b~EiASFTJvNUFvaEdwVjUzWGxZcDAySTJsaTIBdEgCUARgAQ.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/2025-04-16_b~EiASFVJ4ek85Z0w2M2duVXVuWWp1Y2dZVjIBCUgCUARgAQ.jpeg" alt="Nilu" loading="lazy">
+                <img src="images/20250404_084619.jpg" alt="Nilu" loading="lazy">
+                <img src="images/file_00000000d04051f6a619fcc04edd034e_conversation_id=67ed8f1a-2100-8003-8cce-deef88c2553e&message_id=f7c1ff86-fa37-4e4d-87df-6b675f4ff66f.png" alt="Nilu" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Message -->
+        <section class="message-section" id="message">
+            <div class="message-content">
+                <p class="message-text">
+                    In the most selfish way possible,<br>
+                    I hope nobody admires you the way I do.
+                </p>
+            </div>
+        </section>
+
+        <!-- Final -->
+        <section class="final-section" id="final">
+            <div class="final-image">
+                <img src="images/nilu-stare2.jpeg" alt="Nilu">
+            </div>
+            <div class="final-content">
+                <p class="final-text">I love you.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>yours, forever</p>
+        </footer>
+    </main>
+
+    <!-- Celebration Overlay -->
+    <div class="celebration-overlay" id="celebrationOverlay" aria-hidden="true">
+        <div class="celebration-content">
+            <div class="hearts-container" aria-hidden="true">
+                <span class="heart">💕</span>
+                <span class="heart">💖</span>
+                <span class="heart">💝</span>
+                <span class="heart">💗</span>
+                <span class="heart">💓</span>
+            </div>
+            <div class="firework" aria-hidden="true">
+                <span style="--x: -40px; --y: -50px; --c: #ff6bd6;"></span>
+                <span style="--x: 10px; --y: -60px; --c: #7bb7ff;"></span>
+                <span style="--x: 50px; --y: -20px; --c: #6bffd8;"></span>
+                <span style="--x: 45px; --y: 30px; --c: #ffd36b;"></span>
+                <span style="--x: -10px; --y: 55px; --c: #ffffff;"></span>
+                <span style="--x: -50px; --y: 15px; --c: #ff69b4;"></span>
+            </div>
+            <h2 class="celebration-title">IT'S YOUR BIRTHDAY! 🎉</h2>
+            <p class="celebration-message">Today is all about celebrating you and everything that makes you special.</p>
+            <p class="celebration-subtitle">Happy Birthday, my love! ✨</p>
+            <button class="celebration-btn" id="closeCelebration">Explore More</button>
+        </div>
+    </div>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
